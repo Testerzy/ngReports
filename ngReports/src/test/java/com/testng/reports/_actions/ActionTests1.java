@@ -21,7 +21,7 @@ public class ActionTests1 extends MainConfig{
 		action.dragAndDrop(driver.findElement(By.id("drag1")), driver.findElement(By.id("div2"))).build().perform();
 	}
 	
-//	@Test(priority=2)
+	@Test(priority=2)
 	public void Slider() {
 		action = new Actions(driver);
 		driver.get("https://jqueryui.com/slider/");
