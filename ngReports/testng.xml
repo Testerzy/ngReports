@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ReportNG Result" verbose="3" 
+	thread-count="5">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<parameter name="seleniumHost" value="http://localhost" />
+	<parameter name="seleniumPort" value="4444" />
+
+	<test name="Standard result" enabled="false" preserve-order="true">
+		<parameter name="browser" value="firefox" />
+		<!-- <parameter name="version" value="37.0" />-->
+		<classes>
+			<class name="com.testng.reports.DifferentListener" />
+		</classes>
+	</test>
+	
+	<test name="Actions" enabled="true" preserve-order="true">
+		<parameter name="browser" value="firefox" />
+		<packages>
+			<package name="com.testng.reports._actions" />
+		</packages>
+	</test>
+
+</suite>
+
